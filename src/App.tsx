@@ -1,8 +1,8 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "@/components/layout.tsx";
 import {ThemeProvider} from "@/components/context/theme-provider.tsx";
-import WeatherDashboard from "@/pages/Dashboard.tsx";
-import CityPage from "@/pages/CityPage.tsx";
+import WeatherDashboard from "@/pages/dashboard.tsx";
+import CityPage from "@/pages/city-page.tsx";
 
 const App = () => {
     return (
@@ -11,7 +11,7 @@ const App = () => {
                 <Layout>
                     <Routes>
                         <Route path="/" element={ <WeatherDashboard/> } />
-                        <Route path="/city" element={ <CityPage/> } />
+                        <Route path="/city/:cityName" element={ <CityPage/> } />
                     </Routes>
                 </Layout>
             </ThemeProvider>

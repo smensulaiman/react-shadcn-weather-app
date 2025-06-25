@@ -1,10 +1,12 @@
 import {type PropsWithChildren} from 'react';
 import {Heart} from "lucide-react";
+import Header from "@/components/header.tsx";
 
 const Layout = ({children}: PropsWithChildren) => {
     return (
         <div className="bg-gradient-to-br from-background to-muted">
             {/*header*/}
+            <Header/>
 
             {/*main*/}
             <main className="min-h-screen container mx-auto p-4">
