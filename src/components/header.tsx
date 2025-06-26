@@ -1,4 +1,4 @@
-import {Cloud, Moon, Sun} from "lucide-react";
+import {Moon, Sun} from "lucide-react";
 import {Link} from "react-router-dom";
 import {useTheme} from "@/components/context/theme-provider.tsx";
 
@@ -8,12 +8,11 @@ const Header = () => {
     const isDark = theme === "dark";
 
     return (
-        <header
-            className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur py-4 supports-[backdrop-filter]:bg-background/40">
+        <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur py-4 supports-[backdrop-filter]:bg-background/40">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
-                <Link to={"/"}>
-                    <Cloud className={isDark ? "text-green-400" : "text-black"} width="40" height="40"/>
-                    <h3 className={(isDark ? "text-green-400" : "text-black") + " text-xl"}>Abhawa</h3>
+                <Link className="flex" to={"/"}>
+                    <img className="h-6 w-6 fill-red-50" src="/logo.png"  alt="abhawa"/>
+                    <h3 className={(isDark ? "text-green-400" : "text-black") + " text-xl font-libertinus"}>{ "/abhawa".toUpperCase() }</h3>
                 </Link>
                 <div>
                     {/*search*/}
