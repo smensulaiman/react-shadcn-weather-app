@@ -44,7 +44,7 @@ const WeatherForecast = ({data}: WeatherForecastProps) => {
 
     }, {} as Record<string, DailyForecast>)
 
-    const nextDays = Object.values(dailyForecasts).slice(0, 6)
+    const nextDays = Object.values(dailyForecasts).slice(0, Object.values(dailyForecasts).length);
 
     const formattedTemperature = (temp: number) => {
         return `${Math.round(temp) - 273.5}°`;
@@ -53,7 +53,7 @@ const WeatherForecast = ({data}: WeatherForecastProps) => {
     return (
         <Card className="w-full">
             <CardHeader>
-                <CardTitle>5-days Forecast</CardTitle>
+                <CardTitle>{nextDays.length}-days Forecast</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="grid gap-4">
