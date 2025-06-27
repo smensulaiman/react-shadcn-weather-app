@@ -1,6 +1,6 @@
 import type {GeocodingResponse, WeatherResponse} from "@/networking/types.ts";
 import {Card, CardContent} from "@/components/ui/card.tsx";
-import {ArrowDown, ArrowUp, Droplet, Droplets, Wind} from "lucide-react";
+import {ArrowDown, ArrowUp, Droplets, Wind} from "lucide-react";
 
 interface CurrentWeatherProps {
     data: WeatherResponse;

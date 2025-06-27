@@ -5,6 +5,9 @@ import WeatherSkeleton from "@/components/loading-skeleton.tsx";
 import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert.tsx";
 import {useForecastQuery, useReverseGeocodeQuery, useWeatherQuery} from "@/hooks/use-weather.ts";
 import CurrentWeather from "@/components/current-weather.tsx";
+import HourlyTemperature from "@/components/hourly-temperature.tsx";
+import WeatherDetails from "@/components/weather-details.tsx";
+import WeatherForecast from "@/components/weather-forecast.tsx";
 
 const WeatherDashboard = () => {
 
@@ -80,14 +83,18 @@ const WeatherDashboard = () => {
             </div>
 
             <div className="grid gap-4">
-                <div>
+                <div className="flex flex-col lg:flex-row gap-4">
                     {/*current weather*/}
                     <CurrentWeather data={weatherQuery.data} locationName={location} />
                     {/*hourly temperature*/}
+                    <HourlyTemperature data={forecastQuery.data} />
                 </div>
-                <div>
+                <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 items-start">
                     {/*details*/}
+                    <WeatherDetails data={weatherQuery.data} />
+
                     {/*forecast*/}
+                    <WeatherForecast data={forecastQuery.data}/>
                 </div>
             </div>
         </div>
